@@ -1,0 +1,27 @@
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: 田中TOMと愉快な仲間たち
+email: programmer@regonn.biz
+description: >-
+  田中TOMと愉快な仲間たちはデータサイエンティストを目指して旅を続けるのであった。旅の記録を動画に撮っていく。
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://tanaka-tom.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+paginate: 5
+paginate_path: "blog/page:num"
+twitter_username: THogepiyomax
+github_username: tanaka-tom
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - kramdown
+  - jekyll-paginate
+
+timezone: Asia/Tokyo
+include: [".well-known"]

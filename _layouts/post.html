@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.author -%}
+      • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{
+          page.author }}</span></span>
+      {%- endif -%}</p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+
+    <amp-social-share type="facebook" data-param-href="{{site.url}}{{page.url}}" data-param-app_id="343294229391728"></amp-social-share>
+    <amp-social-share type="twitter"></amp-social-share>
+    <a href="http://b.hatena.ne.jp/append?{{ site.url }}{{ page.url }}" target='_blank'>
+      <amp-img src="/images/hatenabookmark-logomark.svg" alt="はてなブックマーク" width="45px" height="45px" layout="fixed"></amp-img>
+    </a>
+    {% if page.youtube %}
+    <amp-youtube data-videoid="{{ page.youtube }}" layout="responsive" width="560" height="315">
+    </amp-youtube>
+    {% endif %}
+
+    {{ content }}
+    <div class="post-footer-ad">
+      <amp-ad layout="responsive" width=300 height=250 type="adsense" data-ad-client="ca-pub-2988052208509124"
+        data-ad-slot="5275585368">
+      </amp-ad>
+    </div>
+  </div>
+
+  {%- if site.disqus.shortname -%}
+  {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

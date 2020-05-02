@@ -1,0 +1,21 @@
+---
+layout: post
+title: "自然言語処理を学ぼう #6 doc2vec 実装編"
+date: 2018-10-08 08:00:00 +0900
+categories: natural
+youtube: '11WobcsWn64'
+---
+
+## 前回考えた処理の流れ
+1. 学習データの文章を用意する
+2. mecab(neologd使用)でわかち書き処理
+3. Word2Vecまで名詞のみにしていたが、Doc2Vecは文章に対応しているので文章全部を利用する
+4. GensimのDoc2Vecにはmost_similarメソッドが用意されているので、それで類似した文章を見つける
+
+## 参考
+- [gensim公式](https://radimrehurek.com/gensim/models/doc2vec.html)
+- [[gensim]Doc2Vecの使い方](https://qiita.com/asian373asian/items/1be1bec7f2297b8326cf)
+Gensimのdoc2vecの使い方概要について書かれたQiita記事
+
+## 実行コード
+[find a similar movie by doc2vec](https://gist.github.com/monisoi/c5e34bce290c70c1a3f0587da6963477)
